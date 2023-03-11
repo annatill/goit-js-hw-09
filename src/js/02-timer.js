@@ -41,6 +41,9 @@ class Timer {
       const currentTime = Date.now();
       const diff = selectedDate - currentTime;
       if (diff <= 0) {
+        // set spans text to zero in keys if something goes wrong
+        this.onTick(this.convertMs(0));
+
         this.stop();
         return;
       }
